@@ -20,10 +20,12 @@ void draw() {
   seconds = second();
 
   println(seconds);
-  minutes = minute();
+ // minutes = int (map(second(),0,59,0,360));
   map(minutes,0,60,0,360);
   hours = hour();
   map(hours,0,12,0,360);
+  
+  
    
   stroke(0);
   pushMatrix();

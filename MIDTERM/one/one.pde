@@ -15,7 +15,7 @@ void setup() {
   
   println("now we'll do a loop and print the iterating value!");
   for (int i = 0; i< floatArray.length; i++){ 
-    println("this is loop number", i);
+    println("this is loop number"+ i);
 
   }
   
