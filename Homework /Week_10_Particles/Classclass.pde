@@ -29,7 +29,7 @@ class Particle {
     float s = map(life, 300, 0, 20, 0);
     fill(150);
     stroke(255);
-    line(pos.x, pos.y, s, s);
+    rect(pos.x, pos.y, s, s);
   }
 
   void addAttract(float x, float y, float maxForce) {
@@ -38,12 +38,13 @@ class Particle {
     PVector newForce = new PVector(cos(angle), sin(angle));
     newForce = newForce.mult(forceStr);
     acc.add(newForce);
+    // pos is direction 
     
   
   }
 
   void addRepel(float x, float y, float maxForce) {
-   float angle = atan2(y - pos.y, x - pos.x)+180;
+   float angle = atan2(y - pos.y, x - pos.x)+PI;
     float forceStr = maxForce / (1 + dist(pos.x, x, pos.y, y));
     PVector newForce = new PVector(cos(angle), sin(angle));
     newForce = newForce.mult(forceStr);
