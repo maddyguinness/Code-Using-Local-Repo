@@ -9,21 +9,22 @@ int buttonWidth=120;
 int buttonHeight=40;
 
 int savedTime;
-int totalTime = 60;
+int totalTime = 30;
 
 void setup() {
   background(0);
-  size(1000, 1000);
+  size(950, 600);
   savedTime = second();
   spotlight = new Spotlight();
+
 }
 
 
 void draw() {
-  text("Find the Triangle", 200, 50);
+  text("Find the Sports Team Photo", 200, 50);
 
   
-  drawCounter();
+
   switch (state) {
   case 0:
     drawLevel1();
@@ -36,6 +37,7 @@ void draw() {
   default:
     break;
   }
+      drawCounter();
 }
 
 void drawCounter() {
