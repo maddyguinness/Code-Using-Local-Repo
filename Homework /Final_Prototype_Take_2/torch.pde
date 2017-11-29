@@ -9,15 +9,17 @@ float life;
 
 
 
-    life = 60;
+    life = 30;
   }
 
   void display() {
-    noStroke();
-    img = loadImage("School.png");
-    color c = get(mouseX,mouseY);
-    fill(c);
-    ellipse(mouseX, mouseY,20, 20);
+    img = loadImage("pic.jpg");
+
+   image(img,0,0);
+    //color c = img.get(mouseX,mouseY);
+
+    ellipse(mouseX, mouseY,life, life);
+    life--;
    
   }
 }
