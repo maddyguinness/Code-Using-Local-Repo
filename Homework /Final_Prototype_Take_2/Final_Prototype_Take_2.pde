@@ -1,5 +1,5 @@
 Spotlight spotlight;
-PImage img;
+
 
 int state= 0;
 int counter= 30;
@@ -21,7 +21,8 @@ void setup() {
 
 void draw() {
   text("Find the Triangle", 200, 50);
-  img = loadImage("School.png");
+
+  
   drawCounter();
   switch (state) {
   case 0:
@@ -66,7 +67,7 @@ void drawLevel1() {
   
  if(mousePressed == true){
     spotlight.display();
-    spotlight.update();
+
   }
 }
 
