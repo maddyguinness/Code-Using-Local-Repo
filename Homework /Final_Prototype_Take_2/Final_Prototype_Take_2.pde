@@ -1,6 +1,7 @@
 Spotlight spotlight;
 
  PImage img;
+ boolean overButton = false;
 
 int state= 0;
 int counter;
@@ -9,11 +10,13 @@ int buttonPosY = height/2;
 int buttonWidth=120;
 int buttonHeight=40;
 
+int passedTime;
 int savedTime;
 int totalTime = 10;
 
 void setup() {
   background(0);
+ rectMode(CENTER);
   size(950, 600);
   savedTime = second();
   spotlight = new Spotlight();
@@ -62,13 +65,28 @@ void drawCounter() {
     textSize(20);
     text("Restart?", width/2-40, height/2+50);
 
-    if (dist(mouseX, mouseY, buttonPosX, buttonPosY)<buttonWidth&&dist(mouseX, mouseY, buttonPosX, buttonPosY)<buttonHeight) {
-      if ( mousePressed == true);
-      state = 0;
-    }
-  }
-}
+    //if (mousePressed == true){
+    
+      
 
+    }
+    }
+  void mousePressed(){
+      if(passedTime > totalTime){
+        if(overButton){
+   state = 0;
+      }
+  }
+  }
+
+boolean overButton(int x, int y, int width, int height){
+  if(mouseX>=x && mouseX <= x + width &&
+  mouseY >= y && mouseY<= y + height){
+  return true;
+}else{
+  return false;
+}
+}
 
 
 void drawLevel1() {
