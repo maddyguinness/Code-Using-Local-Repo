@@ -14,7 +14,7 @@ class Spotlight {
   }
 
   void display() {
-   
+   noFill();
     ellipse(mouseX, mouseY, life, life);
     life--;
   }

@@ -50,27 +50,24 @@ void draw() {
 }
 
 void drawCounter() {
-
+println(mouseX,mouseY);
   int passedTime = second()- savedTime;
   textSize(30);
   text(passedTime, 30, 50); 
 
 
   if (passedTime > totalTime) {
-
+//game over text 
     text("Game Over", width/2-80, height/2);
     fill(0);
     rect(buttonPosX, buttonPosY, buttonWidth, buttonHeight);
     fill(255);
     textSize(20);
     text("Restart?", width/2-40, height/2+50);
-
-    //if (mousePressed == true){
-    
-      
-
+    passedTime = 0;
+  }
     }
-    }
+  
   void mousePressed(){
       if(passedTime > totalTime){
         if(overButton){
@@ -88,6 +85,16 @@ boolean overButton(int x, int y, int width, int height){
 }
 }
 
+void nextLevel(){
+  if(mousePressed == true){
+ if (mouseX <845 && mouseX > 800){
+   
+  if(mouseY <70 && mouseY>40){
+    state++;
+  }
+ }
+}
+}
 
 void drawLevel1() {
   
@@ -98,7 +105,7 @@ void drawLevel1() {
 }
 
 void drawLevel2(){
-  
+  background(50);
 }
 
 void drawLevel3(){
