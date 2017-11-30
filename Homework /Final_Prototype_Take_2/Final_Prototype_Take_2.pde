@@ -1,15 +1,16 @@
 Spotlight spotlight;
 
+ PImage img;
 
 int state= 0;
-int counter= 30;
-int buttonPosX = width/2-60;
-int buttonPosY = height/2+20;
+int counter;
+int buttonPosX = width/2;
+int buttonPosY = height/2;
 int buttonWidth=120;
 int buttonHeight=40;
 
 int savedTime;
-int totalTime = 30;
+int totalTime = 10;
 
 void setup() {
   background(0);
@@ -23,7 +24,12 @@ void setup() {
 void draw() {
   text("Find the Sports Team Photo", 200, 50);
 
-  
+   img = loadImage("pic.jpg");
+    pushMatrix();
+    scale(0.5);
+    image(img, 0, 0);
+    //color c = img.get(mouseX,mouseY);
+    popMatrix();
 
   switch (state) {
   case 0:
@@ -56,7 +62,7 @@ void drawCounter() {
     textSize(20);
     text("Restart?", width/2-40, height/2+50);
 
-    if (dist(mouseX, mouseY, buttonPosX, buttonPosY)<buttonWidth/buttonHeight) {
+    if (dist(mouseX, mouseY, buttonPosX, buttonPosY)<buttonWidth&&dist(mouseX, mouseY, buttonPosX, buttonPosY)<buttonHeight) {
       if ( mousePressed == true);
       state = 0;
     }
